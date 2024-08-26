@@ -7,6 +7,13 @@ public class Shoot : MonoBehaviour
     public Transform firePoint;
     [SerializeField] private Vector3 laserRotation = Vector3.zero;
 
+    private BulletCounter bulletCounter;
+
+    void Start()
+    {
+        bulletCounter = FindObjectOfType<BulletCounter>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -24,6 +31,11 @@ public class Shoot : MonoBehaviour
             if (laserRb)
             {
                 laserRb.velocity = firePoint.up * laserSpeed;
+            }
+
+            if (bulletCounter != null)
+            {
+                bulletCounter.IncrementBulletCount();
             }
         }
     }

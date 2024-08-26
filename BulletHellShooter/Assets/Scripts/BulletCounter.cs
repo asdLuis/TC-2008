@@ -8,10 +8,6 @@ public class BulletCounter : MonoBehaviour
 
     void Start()
     {
-        if (bulletCounterText == null)
-        {
-            Debug.LogError("Bullet Counter Text is not assigned.");
-        }
         UpdateBulletCounter();
     }
 
@@ -32,6 +28,7 @@ public class BulletCounter : MonoBehaviour
     public void DecrementBulletCount()
     {
         activeBullets--;
+        if (activeBullets < 0) activeBullets = 0;
         UpdateBulletCounter();
     }
 }

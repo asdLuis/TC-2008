@@ -4,7 +4,7 @@ using TMPro;
 public class PlayerHealth : MonoBehaviour
 {
     public int health = 3;
-    public TextMeshProUGUI healthText; // Reference to your TextMeshPro health display
+    public TextMeshProUGUI healthText;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Asteroid"))
         {
             TakeDamage();
-            Destroy(collision.gameObject); // Destroy the asteroid on collision
+            Destroy(collision.gameObject);
         }
     }
 
@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             // Handle player death
-            Destroy(gameObject); // Destroy the player object or handle game over
+            Destroy(gameObject);
         }
     }
 

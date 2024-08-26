@@ -3,15 +3,13 @@ using TMPro;
 
 public class AsteroidCounter : MonoBehaviour
 {
-    public TextMeshProUGUI asteroidCounterText; // Reference to your TextMeshPro counter display
+    public TextMeshProUGUI asteroidCounterText;
     private int asteroidCount = 0;
 
-    // Singleton instance
     public static AsteroidCounter Instance { get; private set; }
 
     void Awake()
     {
-        // Ensure only one instance of AsteroidCounter exists
         if (Instance == null)
         {
             Instance = this;
@@ -19,7 +17,7 @@ public class AsteroidCounter : MonoBehaviour
         }
         else if (Instance != this)
         {
-            Destroy(this); // Only destroy this component, not the entire GameObject
+            Destroy(this);
         }
     }
 
@@ -37,7 +35,7 @@ public class AsteroidCounter : MonoBehaviour
     public void DecrementAsteroidCount()
     {
         asteroidCount--;
-        if (asteroidCount < 0) asteroidCount = 0; // Prevent negative counts
+        if (asteroidCount < 0) asteroidCount = 0;
         UpdateAsteroidCounter();
     }
 

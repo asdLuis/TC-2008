@@ -15,6 +15,7 @@ public class Asteroid : MonoBehaviour
 
             // Decrement asteroid counter
             AsteroidCounter.Instance.DecrementAsteroidCount();
+            BossAsteroidCounter.Instance.DecrementBossAsteroidCount();
 
             // Destroy the asteroid
             Destroy(gameObject);
@@ -25,5 +26,6 @@ public class Asteroid : MonoBehaviour
     {
         // Decrement asteroid counter if destroyed by other means (e.g., player shot)
         AsteroidCounter.Instance.DecrementAsteroidCount();
+        BossAsteroidCounter.Instance.DecrementBossAsteroidCount();
     }
 }
